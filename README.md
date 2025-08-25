@@ -1,4 +1,4 @@
-# ToneCraft — Multilingual Tone Rewriter
+# ToneCraft ✍️ — Multilingual Tone Rewriter
 
 ![Live Demo](https://img.shields.io/badge/Live_Demo-tone--craft--rewrite.vercel.app-blue?style=flat-square)
 
