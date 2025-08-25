@@ -1,6 +1,6 @@
 # ✍️ ToneCraft - Multilingual Tone Rewriter
 
-![Live Demo](https://img.shields.io/badge/Live_Demo-tone--craft--rewrite.vercel.app-blue?style=flat-square)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-tone--craft--rewrite-blue?style=flat-square)](https://tone-craft-rewrite.vercel.app)
 
 ToneCraft instantly rewrites any input text into a selected tone and (optionally) language—perfect for polishing emails, DMs, resumes, or captions.
 
