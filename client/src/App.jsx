@@ -21,7 +21,7 @@ export default function App() {
     setRewrittenText("");
 
     try {
-      const res = await fetch("http://localhost:5000/api/rewrite", {
+      const res = await fetch("/api/rewrite", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text, tone, language }),
