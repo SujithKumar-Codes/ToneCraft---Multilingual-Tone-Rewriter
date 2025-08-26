@@ -1,6 +1,60 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+function CopyButton({ text }) {
+  const [copied, setCopied] = React.useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+
+    // Reset after 2.5 seconds
+    setTimeout(() => setCopied(false), 2500);
+  };
+
+  return (
+    <button
+      onClick={handleCopy}
+      className="absolute top-3 right-4 p-2 rounded-lg bg-white/10 hover:bg-white/20 cursor-pointer transition"
+      title={copied ? "Copied!" : "Copy text"}
+    >
+      {copied ? (
+        // ✅ Tick Icon
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={2}
+          stroke="currentColor"
+          className="w-5 h-5 text-green-400"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M5 13l4 4L19 7"
+          />
+        </svg>
+      ) : (
+        // 📋 Copy Icon
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={2}
+          stroke="currentColor"
+          className="w-5 h-5 text-pink-400 hover:text-purple-400"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M8 16h8m-8-4h8m-8-4h8m-2-6H6a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V6l-4-4z"
+          />
+        </svg>
+      )}
+    </button>
+  );
+}
+
 export default function App() {
   const [loading, setLoading] = useState(true);
   const [text, setText] = useState("");
@@ -156,14 +210,18 @@ export default function App() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="mt-6 sm:mt-8 w-full max-w-xl sm:max-w-2xl p-4 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-lg"
+                className="relative mt-6 sm:mt-8 w-full max-w-xl sm:max-w-2xl p-4 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-lg"
               >
+                {/* Copy Button with Tick After Copy */}
+                <CopyButton text={rewrittenText} />
+
                 <h2 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-pink-400">
                   Rewritten Text:
                 </h2>
                 <p className="text-gray-200 text-sm sm:text-base">{rewrittenText}</p>
               </motion.div>
             )}
+
           </motion.div>
         )}
       </AnimatePresence>
