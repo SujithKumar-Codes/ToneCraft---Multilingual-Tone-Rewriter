@@ -2,7 +2,7 @@
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-tone--craft--rewrite-blue?style=flat-square)](https://tone-craft-rewrite.vercel.app)
 
-ToneCraft instantly rewrites any input text into a selected tone and (optionally) language—perfect for polishing emails, DMs, resumes, or captions.
+ToneCraft instantly rewrites any input text into a selected tone and language—perfect for polishing emails, DMs, resumes, or captions.
 
 The project is built with **Vite + React**, animated with **Framer Motion** and **Lordicon**, and powered by **Google Gemini** via a Vercel Serverless Function.
 
