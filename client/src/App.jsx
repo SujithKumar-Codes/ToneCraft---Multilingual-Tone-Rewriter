@@ -19,7 +19,7 @@ function CopyButton({ text }) {
       title={copied ? "Copied!" : "Copy text"}
     >
       {copied ? (
-        // ✅ Tick Icon
+        // Tick Icon
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -35,7 +35,7 @@ function CopyButton({ text }) {
           />
         </svg>
       ) : (
-        // 📋 Copy Icon
+        // Copy Icon
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
