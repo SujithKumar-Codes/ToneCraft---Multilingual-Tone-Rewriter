@@ -15,7 +15,7 @@ export default async function handler(req, res) {
 
   try {
     const response = await axios.post(
-      "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent",
+      "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash-latest:generateContent",
       {
         contents: [
           {
@@ -48,3 +48,4 @@ export default async function handler(req, res) {
     res.status(500).json({ error: "Failed to rewrite text" });
   }
 }
+
